@@ -1,0 +1,17 @@
+{
+    "name": "kaleo",
+    "version": "1.0.0",
+    "description": "kaleo.codes website",
+    "main": "index.js",
+    "dependencies": {
+        "express": "^4.14.0"
+    },
+    "devDependencies": {},
+    "scripts": {
+        "start": "node index.js",
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "deploy": "set -ex && docker kill $(docker ps | grep '0.0.0.0:3000' | awk '{print $1}') || true && set +x && docker build -t ideas . && docker run -d -p 3000:3000 ideas"
+    },
+    "author": "",
+    "license": "ISC"
+}
